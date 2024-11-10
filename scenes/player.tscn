@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2jvbk83sgp6k"]
+[gd_scene load_steps=22 format=3 uid="uid://b2jvbk83sgp6k"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_0k4u6"]
 [ext_resource type="Texture2D" uid="uid://biojp21uha3ld" path="res://assets/sprite_coeur_chapeau.png" id="2_dr4ti"]
@@ -22,6 +22,54 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("2_dr4ti")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwk4k"]
+atlas = ExtResource("2_dr4ti")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3b52"]
+atlas = ExtResource("2_dr4ti")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5kpg"]
+atlas = ExtResource("2_dr4ti")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk6d4"]
+atlas = ExtResource("2_dr4ti")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whoe6"]
+atlas = ExtResource("2_dr4ti")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id1wn"]
+atlas = ExtResource("2_dr4ti")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bg8p"]
+atlas = ExtResource("2_dr4ti")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73hnh"]
+atlas = ExtResource("2_dr4ti")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r73f"]
+atlas = ExtResource("2_dr4ti")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76du4"]
+atlas = ExtResource("2_dr4ti")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kckm"]
+atlas = ExtResource("2_dr4ti")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmfm7"]
+atlas = ExtResource("2_dr4ti")
+region = Rect2(96, 64, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_k4qnp"]
 animations = [{
 "frames": [{
@@ -32,8 +80,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_r1fck")
 }],
 "loop": true,
-"name": &"default_idle",
-"speed": 5.0
+"name": &"DEFAULT_IDLE",
+"speed": 5.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -43,12 +91,81 @@ animations = [{
 "texture": SubResource("AtlasTexture_wrhkg")
 }],
 "loop": true,
-"name": &"default_walk",
-"speed": 5.0
+"name": &"DEFAULT_WALK",
+"speed": 5.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwk4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3b52")
+}],
+"loop": true,
+"name": &"DEMON_IDLE",
+"speed": 5.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5kpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk6d4")
+}],
+"loop": true,
+"name": &"DEMON_WALK",
+"speed": 5.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whoe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id1wn")
+}],
+"loop": true,
+"name": &"MAGICIAN_IDLE",
+"speed": 5.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bg8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73hnh")
+}],
+"loop": true,
+"name": &"MAGICIAN_WALK",
+"speed": 5.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r73f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76du4")
+}],
+"loop": true,
+"name": &"TIMMY_IDLE",
+"speed": 5.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kckm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmfm7")
+}],
+"loop": true,
+"name": &"TIMMY_WALK",
+"speed": 5.5
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jq0xs"]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(250, 138)
+collision_mask = 14
 script = ExtResource("1_0k4u6")
 speed = 500.0
 
@@ -70,4 +187,12 @@ editor_draw_limits = true
 position = Vector2(0, 1)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_k4qnp")
-animation = &"default_walk"
+animation = &"TIMMY_WALK"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_jq0xs")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
