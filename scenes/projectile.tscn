@@ -14,6 +14,7 @@ script = ExtResource("1_3jdw5")
 shape = SubResource("CircleShape2D_2gcnu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
 texture = ExtResource("1_4t1d2")
 region_enabled = true
 region_rect = Rect2(64, 0, 32, 24)

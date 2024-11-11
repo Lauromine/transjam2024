@@ -74,11 +74,11 @@ func doMagicianPower():
 	pass
 	
 func doDemonPower():
+	print("shoot")
 	var projectile = projectile_scene.instantiate() as Projectile
 	self.get_parent().add_child(projectile)
 	projectile.position = self.position
 	projectile.setVelocity(shoot_direction)
-	pass
 	
 func changeHat():
 	if len(hats) == 0:

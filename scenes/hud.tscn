@@ -8,9 +8,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 2
-anchors_preset = 0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 19.0
@@ -18,20 +20,20 @@ offset_top = -127.0
 offset_right = 1120.0
 offset_bottom = -13.0
 
-[node name="LabelMove" type="Label" parent="Control"]
+[node name="LabelMove" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_right = 274.0
 offset_bottom = 23.0
 text = "- Utiliser les flèches pour se déplacer"
 
-[node name="LabelUseHat" type="Label" parent="Control"]
+[node name="LabelUseHat" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_top = 23.0
 offset_right = 319.0
 offset_bottom = 46.0
-text = "- ESPACE pour changer de chapeau"
+text = "- ESPACE pour utiliser le chapeau"
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 2
 offset_top = 46.0
 offset_right = 319.0
