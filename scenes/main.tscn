@@ -38,7 +38,6 @@ position = Vector2(658, 108)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_k5521")
-autoplay = true
 
 [node name="DemonHat" parent="." instance=ExtResource("3_ebp7k")]
 z_index = 1
