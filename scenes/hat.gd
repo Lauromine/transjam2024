@@ -8,7 +8,6 @@ func _ready() -> void:
 	for sprite_child in sprites.get_children():
 		if sprite_child.name != hat_type :
 			(sprite_child as Sprite2D).visible = false
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
