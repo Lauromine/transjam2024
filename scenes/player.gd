@@ -4,6 +4,8 @@ class_name Player
 @export var speed: float = 100.0
 var current_hat_state:HAT_STATE = HAT_STATE.DEFAULT
 var hats:Array[HAT_STATE] = []
+var projectile_scene:PackedScene = load("res://scenes/projectile.tscn")
+var shoot_direction: Vector2 = Vector2.ZERO
 
 enum STATES {
 	STAY,
@@ -28,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	elif state == STATES.STAY:
 		stay(delta)
 		
-	if Input.is_action_pressed("use_power"):
+	if Input.is_action_just_pressed("use_power"):
 		usePower()
 		
 	if Input.is_action_just_pressed("change_hat"):
@@ -53,6 +55,7 @@ func playerMovement(delta: float) :
 		anim.play(HAT_STATE.keys()[current_hat_state] + "_IDLE")
 	else:
 		anim.play(HAT_STATE.keys()[current_hat_state] + "_WALK")
+		shoot_direction = velocity.normalized()
 	
 	position += velocity
 	move_and_slide()
@@ -60,12 +63,21 @@ func playerMovement(delta: float) :
 func usePower():
 	if current_hat_state == HAT_STATE.MAGICIAN:
 		doMagicianPower()
+	elif current_hat_state == HAT_STATE.DEMON:
+		doDemonPower()
 	pass
 
 func stay(delta):
 	pass
 
 func doMagicianPower(): 
+	pass
+	
+func doDemonPower():
+	var projectile = projectile_scene.instantiate() as Projectile
+	self.get_parent().add_child(projectile)
+	projectile.position = self.position
+	projectile.setVelocity(shoot_direction)
 	pass
 	
 func changeHat():

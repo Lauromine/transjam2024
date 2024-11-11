@@ -1,15 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckp11cdg8i5op"]
+[gd_scene load_steps=8 format=3 uid="uid://ckp11cdg8i5op"]
 
 [ext_resource type="PackedScene" uid="uid://b2jvbk83sgp6k" path="res://scenes/player.tscn" id="1_guk67"]
 [ext_resource type="Texture2D" uid="uid://dd6vhhulexsvh" path="res://assets/YellowFloor.png" id="1_lyyyx"]
 [ext_resource type="PackedScene" uid="uid://gh4e1djagacl" path="res://scenes/hat.tscn" id="3_ebp7k"]
 [ext_resource type="AudioStream" uid="uid://b0xkqv34ky1f7" path="res://assets/sound/music/music game.ogg" id="4_k5521"]
+[ext_resource type="PackedScene" uid="uid://cm3efmbnujvki" path="res://scenes/wall.tscn" id="5_f8ogv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8invs"]
 texture = ExtResource("1_lyyyx")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_tq343"]
+physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_8invs")
 
 [node name="Main" type="Node2D"]
@@ -39,3 +41,9 @@ hat_type = "DEMON"
 [node name="TimmyHat" parent="." instance=ExtResource("3_ebp7k")]
 position = Vector2(633, 177)
 hat_type = "TIMMY"
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2(511, 177)
+
+[node name="Wall" parent="Walls" instance=ExtResource("5_f8ogv")]
+position = Vector2(46, -6)

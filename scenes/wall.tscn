@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm3efmbnujvki"]
+
+[ext_resource type="Texture2D" uid="uid://06bbsvp53nip" path="res://assets/sprites/Misc.png" id="1_yinb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q81rt"]
+size = Vector2(32, 32)
+
+[node name="Wall" type="StaticBody2D" groups=["destroyable"]]
+collision_layer = 9
+
+[node name="Sprites" type="Node2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprites"]
+position = Vector2(8, 16)
+texture = ExtResource("1_yinb2")
+region_enabled = true
+region_rect = Rect2(71, 40, 16, 16)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprites"]
+position = Vector2(-8, 16)
+texture = ExtResource("1_yinb2")
+region_enabled = true
+region_rect = Rect2(71, 40, 16, 16)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprites"]
+position = Vector2(-8, 0)
+texture = ExtResource("1_yinb2")
+region_enabled = true
+region_rect = Rect2(71, 40, 16, 16)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprites"]
+position = Vector2(8, 0)
+texture = ExtResource("1_yinb2")
+region_enabled = true
+region_rect = Rect2(71, 40, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_q81rt")
