@@ -1,7 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://b2jvbk83sgp6k"]
+[gd_scene load_steps=25 format=3 uid="uid://b2jvbk83sgp6k"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_0k4u6"]
 [ext_resource type="Texture2D" uid="uid://biojp21uha3ld" path="res://assets/sprite_coeur_chapeau.png" id="2_dr4ti"]
+[ext_resource type="AudioStream" uid="uid://c0unnktg6aek4" path="res://assets/sound/sfx/object obtained.wav" id="3_8cyi0"]
+[ext_resource type="AudioStream" uid="uid://bhuj221or8vxy" path="res://assets/sound/sfx/swish-wooden-bat.mp3" id="3_u6ncu"]
+[ext_resource type="AudioStream" uid="uid://was4ut155qn" path="res://assets/sound/sfx/whoosh-flame-burst.mp3" id="5_4e73l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xdup"]
 size = Vector2(73, 74)
@@ -174,7 +177,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_6xdup")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.26, 2.26)
+zoom = Vector2(2.2, 2.2)
 limit_left = -10000
 limit_top = -10000
 limit_right = 10000
@@ -194,5 +197,15 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_jq0xs")
+
+[node name="HatSwapSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_u6ncu")
+
+[node name="ObjectObtainedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8cyi0")
+volume_db = -13.0
+
+[node name="DemonPowerSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4e73l")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

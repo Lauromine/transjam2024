@@ -19,10 +19,6 @@ config/icon="res://icon.svg"
 
 project/assembly_name="TransJam2024"
 
-[global_group]
-
-destroyable=""
-
 [input]
 
 player_up={

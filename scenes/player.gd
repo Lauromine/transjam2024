@@ -6,6 +6,9 @@ var current_hat_state:HAT_STATE = HAT_STATE.DEFAULT
 var hats:Array[HAT_STATE] = []
 var projectile_scene:PackedScene = load("res://scenes/projectile.tscn")
 var shoot_direction: Vector2 = Vector2.ZERO
+@onready var object_obtained_sound: AudioStreamPlayer2D = $ObjectObtainedSound
+@onready var demon_power_sound: AudioStreamPlayer2D = $DemonPowerSound
+@onready var hat_swap_sound: AudioStreamPlayer2D = $HatSwapSound
 
 enum STATES {
 	STAY,
@@ -23,6 +26,10 @@ var state: STATES = STATES.CONTROLLED
 
 func _init() -> void:
 	state = STATES.CONTROLLED
+	
+
+func _ready() -> void:
+	pass
 
 func _physics_process(delta: float) -> void:
 	if state == STATES.CONTROLLED:
@@ -74,11 +81,11 @@ func doMagicianPower():
 	pass
 	
 func doDemonPower():
-	print("shoot")
 	var projectile = projectile_scene.instantiate() as Projectile
 	self.get_parent().add_child(projectile)
 	projectile.position = self.position
 	projectile.setVelocity(shoot_direction)
+	demon_power_sound.play()
 	
 func changeHat():
 	if len(hats) == 0:
@@ -90,7 +97,8 @@ func changeHat():
 		hatIndex = 0
 	
 	current_hat_state = hats[hatIndex]
-	
+	if len(hats) > 0:
+		hat_swap_sound.play()
 
 func setModeControlled():
 	state = STATES.CONTROLLED
@@ -102,5 +110,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		hats.append(HAT_STATE[pickedup_hat.hat_type])
 		current_hat_state = HAT_STATE[pickedup_hat.hat_type]
 		area.queue_free()
+		object_obtained_sound.play()
 	
 	print(len(hats))
