@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2hmmr2ot778e"
+path="res://.godot/imported/fireball destroy wall.ogg-1cf35d97c040d552532f58dc5c2cba4d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/fireball destroy wall.ogg"
+dest_files=["res://.godot/imported/fireball destroy wall.ogg-1cf35d97c040d552532f58dc5c2cba4d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
