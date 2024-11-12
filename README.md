@@ -1,6 +1,10 @@
 # TransJam2024 : Heart in a Brainscape
 🏳️‍⚧️ Dépôt du projet : Heart in a Brainscape pour la TransJam2024
-![image de couverture](Heart_In_A_Headscape.png)
+
+<p align="center">
+<img src="Heart_In_A_Headscape.png" width="300" />
+</p>
+
 ## Contexte
 ### TransJam 2024
 La TransJam2024 a réuni des personnes trans en non-mixité choisie pour créer des jeux vidéo ayant pour but de visibiliser les vécus des personnes trans, dans un contexte où la transidentité dans le jeu vidéo est très peu présente et souvent abordée maladroitement car n'impliquant pas de personnes concernées dans le processus de création.
