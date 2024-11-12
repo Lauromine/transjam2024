@@ -4,7 +4,9 @@
 ## Contexte
 ### TransJam 2024
 La TransJam2024 a réuni des personnes trans en non-mixité choisie pour créer des jeux vidéo ayant pour but de visibiliser les vécus des personnes trans, dans un contexte où la transidentité dans le jeu vidéo est très peu présente et souvent abordée maladroitement car n'impliquant pas de personnes concernées dans le processus de création.
+
 La Jam s'est déroulée du 09 au 11 novembre 2024 à Paris, France, était organisée par [OUTrans](https://www.outrans.org/), association féministe d'autosupport trans et a rassemblé 16 participant·es.
+
 Pages Itch.io : 
 - de la [TransJam2024](https://itch.io/jam/transjam-2024)
 - de [Heart in a Brainscape](https://itch.io/jam/transjam-2024/rate/3101495)
